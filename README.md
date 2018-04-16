@@ -31,6 +31,7 @@ const GooglePlacesInput = () => {
       listViewDisplayed='auto'    // true/false/undefined
       fetchDetails={true}
       renderDescription={row => row.description} // custom description render
+      onGeolocationError={error => console.log(error)} // customize error handling if geolocation can not be determined.
       onPress={(data, details = null) => { // 'details' is provided when fetchDetails = true
         console.log(data, details);
       }}

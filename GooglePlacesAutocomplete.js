@@ -208,7 +208,12 @@ export default class GooglePlacesAutocomplete extends Component {
       },
       (error) => {
         this._disableRowLoaders();
-        alert(error.message);
+        if (this.props.onGeolocationError) {
+          this.props.onGeolocationError(error)
+        }
+        else {
+          alert(error.message);
+        }
       },
       options
     );
